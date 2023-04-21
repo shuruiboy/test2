@@ -54,10 +54,3 @@ def parse_bool_expr(tokens):
             return res
         else:
             raise ValueError('Invalid token: {}'.format(token.value))
-
-    if not tokens:
-        raise ValueError('Empty input')
-    res = parse_bterm()
-    if tokens:
-        raise ValueError('Unexpected tokens: {}'.format([t.value for t in tokens]))
-    return res
